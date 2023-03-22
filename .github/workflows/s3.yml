@@ -1,13 +1,12 @@
 name: create_S3_bucket
 on: 
   push:
-
+env:
+  AWS_ACCESS_KEY_ID : ${{secrets.ACCESS_KEY100}}
+  AWS_SECRET_ACCESS_KEY: ${{secrets.SECRET_ACCES_KEY100}}
 jobs:
   S3_deployment:
      runs-on: ubuntu-latest
-     env:
-       AWS_ACCESS_KEY_ID : ${{secrets.ACCESS_KEY100}}
-       AWS_SECRET_ACCESS_KEY: ${{secrets.SECRET_ACCES_KEY100}}
      steps: 
        - name: checkout
          uses: actions/checkout@v1
