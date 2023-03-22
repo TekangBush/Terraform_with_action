@@ -11,8 +11,8 @@ jobs:
      steps:
        - name: setup Terraform
          uses: hashicorp/setup-terraform@v2
-           with:
-             terraform-version: 1.9.1
+         with:
+           terraform-version: 1.9.1
        - name: terraform init
          run: |
             terraform init
