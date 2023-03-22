@@ -1,5 +1,5 @@
 # Terraform provider block 
-terraform {
+/*terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -7,7 +7,7 @@ terraform {
       
     }
   }
-}
+}   */
 # aws provider block 
 provider "aws" {
   
