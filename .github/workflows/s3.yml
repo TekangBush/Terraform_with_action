@@ -1,13 +1,13 @@
 name: create_S3_bucket
 on: 
   push:
-env:
-  AWS_ACCESS_KEY_ID : ${{secrets.ACCESS_KEY}}
-  AWS_SECRET_ACCESS_KEY: ${{secrets.SECRET_KEY-ID}}
 
 jobs:
   S3_deployment:
      runs-on: ubuntu-latest
+     env:
+       AWS_ACCESS_KEY_ID : ${{secrets.ACCESS_KEY}}
+       AWS_SECRET_ACCESS_KEY: ${{secrets.SECRET_KEY-ID}}
      steps:
        - name: setup Terraform
          uses: hashicorp/setup-terraform@v2
