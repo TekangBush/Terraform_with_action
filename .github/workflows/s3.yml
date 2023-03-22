@@ -1,0 +1,27 @@
+name: create_S3_bucket
+on: 
+  push:
+env:
+  AWS_ACCESS_KEY_ID : ${{secrets.ACCESS_KEY}}
+  AWS_SECRET_ACCESS_KEY: ${{secrets.SECRET_KEY-ID}}
+
+jobs:
+  S3_deployment:
+     runs-on: ubuntu-latest
+     steps:
+       - name: setup Terraform
+         uses: hashicorp/setup-terraform@v2
+           with:
+             terraform-version: 1.9.1
+       - name: terraform init
+         run: |
+            terraform init
+       - name: terraform validate
+         run: |
+            terraform validate
+       - name: terraform plan
+         run: |
+            terraform plan
+       - name: terraform apply
+         run: |
+            terraform apply -auto-approve
