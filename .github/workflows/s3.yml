@@ -8,6 +8,9 @@ jobs:
      env:
        AWS_ACCESS_KEY_ID : ${{secrets.ACCESS_KEY100}}
        AWS_SECRET_ACCESS_KEY: ${{secrets.SECRET_ACCES_KEY100}}
+     steps: 
+       - name: checkout
+         uses: actions/checkout@v1
      steps:
        - name: setup Terraform
          uses: hashicorp/setup-terraform@v2
